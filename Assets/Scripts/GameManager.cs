@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     {
         public int HighScore;
         public string BestPlayerName;
+        public string PlayerName;
     }
 
     public void SaveData()
@@ -37,6 +38,7 @@ public class GameManager : MonoBehaviour
         SaveScoreData data = new SaveScoreData();
         data.HighScore = HighScore;
         data.BestPlayerName = BestPlayerName;
+        data.PlayerName = PlayerName;
 
         string json = JsonUtility.ToJson(data);
 
@@ -53,6 +55,7 @@ public class GameManager : MonoBehaviour
 
             HighScore = data.HighScore;
             BestPlayerName = data.BestPlayerName;
+            PlayerName = data.PlayerName;
         }
     }
 }
